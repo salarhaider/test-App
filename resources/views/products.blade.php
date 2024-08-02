@@ -64,9 +64,9 @@
                                         <td class="col-4">
                                             <a href="products/{{$product->id}}/" class="btn btn-sm btn-success"><i
                                                     class="bi bi-eye"></i></a>
-                                            <a href="" class="btn btn-sm btn-primary"><i
+                                            <a href="#" class="btn btn-sm btn-primary"><i
                                                     class="bi bi-pencil-square"></i></a>
-                                            <a href="" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
+                                            <a href="#" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
