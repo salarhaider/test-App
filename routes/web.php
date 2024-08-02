@@ -21,15 +21,17 @@ Route::post('register_user', [UserController::class, 'register_user'])->name('re
 
 // Route::get('dashboard', [UserController::class, 'dashboard'])->name('dashboard');
 
-Route::controller(productcontroller::class)->group(function () {
+Route::middleware(['auth'])->group(function (){
 
-    Route::get('/products', 'index')->name('all_products')->Middleware(validUser::class);
-    Route::get('products/{id}/', 'fetch_single_product')->name('fetch_single_product');
-    // Route::view('product/{id}/view', 'view_product')->name('view_single_product');
+    Route::controller(productcontroller::class)->group(function () {
 
+        Route::get('/products', 'index')->name('all_products');
+        Route::get('products/{id}/', 'fetch_single_product')->name('fetch_single_product')->withoutMiddleware(['auth']);
+        // Route::view('product/{id}/view', 'view_product')->name('view_single_product');
+        Route::get('create_product', 'create_product')->name('create_product');
+        Route::post('add_product', 'add_product')->name('add_product');
 
-    Route::get('create_product', 'create_product')->name('create_product');
-    Route::post('add_product', 'add_product')->name('add_product');
+    });
 
 });
 
