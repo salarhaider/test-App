@@ -35,6 +35,8 @@ Route::middleware(['auth'])->group(function (){
 
 });
 
+#test comment
+
 // Route::get('/products', [productcontroller::class, 'index'])->name('all_products');
 // Route::get('products/{id}/', [productcontroller::class, 'fetch_single_product'])->name('fetch_single_product');
 // // Route::view('product/{id}/view', 'view_product')->name('view_single_product');
