@@ -25,7 +25,7 @@ Route::middleware(['auth'])->group(function (){
 
     Route::controller(productcontroller::class)->group(function () {
 
-        Route::get('/products', 'index')->name('all_products')->withoutMiddleware(['auth'])->withoutMiddleware(['auth']);
+        Route::get('/products', 'index')->name('all_products')->withoutMiddleware(['auth']);
         Route::get('products/{id}/', 'fetch_single_product')->name('fetch_single_product')->withoutMiddleware(['auth']);
         // Route::view('product/{id}/view', 'view_product')->name('view_single_product');
         Route::get('create_product', 'create_product')->name('create_product');
